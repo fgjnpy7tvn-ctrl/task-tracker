@@ -20,3 +20,6 @@ py task_tracker.py
 ## Notes
 - Tasks are saved locally in a text file
 - The file is ignored by git using .gitignore
+
+## Example
+“Press 2 to add a task, 1 to view, 5 to save & exit.”
