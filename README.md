@@ -44,7 +44,6 @@ done|created_at|text
 Example:
 0|2025-01-10 14:30|Finish Python project
 1|2025-01-10 15:00|Push code to GitHub
-
 done: 0 = not completed, 1 = completed
 
 created_at: timestamp of creation
