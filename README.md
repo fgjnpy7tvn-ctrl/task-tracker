@@ -103,4 +103,5 @@ This project is part of a personal learning roadmap focused on:
 ## 📄 License
 
 This project is for educational purposes.
+
 Fix README formatting (indented blocks)
