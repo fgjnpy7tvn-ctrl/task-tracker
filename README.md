@@ -1,121 +1,97 @@
 # 📝 Task Tracker (CLI)
 
-A simple but robust **command-line task tracker** written in Python.  
-It allows you to manage daily tasks, track completion status, and store everything locally in a file.
+A simple and clean **Command-Line Task Tracker** written in Python.  
+It allows you to manage daily tasks directly from the terminal with persistent storage.
 
-This project was built as a learning project with a strong focus on:
-- clean code
-- user experience (UX)
-- data safety
-- extensibility
+This project was built as a learning project to practice **Python fundamentals, file handling, and basic CLI design**.
 
 ---
 
 ## ✨ Features
 
+- View all tasks
 - Add new tasks
-- View all tasks (open tasks shown first)
-- Toggle task completion (done / undone)
-- Delete individual tasks
-- Clear all completed tasks at once
-- Automatic saving after every action
-- Persistent storage using a local file
-- Graceful handling of invalid or corrupted data
+- Mark tasks as completed
+- Delete tasks
+- Persistent storage using a local text file
+- Simple and user-friendly CLI interface
 
 ---
 
-## 🧠 How It Works
+## 📋 Requirements
 
-Tasks are stored locally in a `tasks.txt` file using the following format:
-
-done|created_at|text
-
-makefile
-Αντιγραφή κώδικα
-
-Example:
-0|2025-01-10 14:30|Finish Python project
-1|2025-01-10 15:00|Push code to GitHub
-
-markdown
-Αντιγραφή κώδικα
-
-- `done`: `0` = not completed, `1` = completed  
-- `created_at`: timestamp of creation  
-- `text`: task description  
-
-The application automatically validates file contents and ignores corrupted lines.
-
----
-
-## 🚀 Getting Started
-
-### Requirements
 - Python **3.10+**
-- No external dependencies
+- No external libraries required
 
-### Run the Application
+---
 
-#### Windows
+## ▶️ Run the Application
+
+### Windows
 ```bash
 py task_tracker.py
-or
-
-bash
-Αντιγραφή κώδικα
-python task_tracker.py
 macOS / Linux
 bash
 Αντιγραφή κώδικα
 python3 task_tracker.py
-🖥️ Usage
-When you run the program, you will see:
+🧠 How It Works
+Tasks are stored in a local file called tasks.txt.
 
-mathematica
+Each task follows this format:
+
+text
+Αντιγραφή κώδικα
+done|created_at|text
+Example:
+text
+Αντιγραφή κώδικα
+0|2025-01-10 14:30|Finish Python project
+1|2025-01-10 15:00|Push code to GitHub
+done: 0 = not completed, 1 = completed
+
+created_at: timestamp of creation
+
+text: task description
+
+🗂️ Project Structure
+text
+Αντιγραφή κώδικα
+task-tracker/
+│
+├── task_tracker.py   # Main application
+├── tasks.txt         # Task storage file (generated at runtime)
+├── .gitignore
+└── README.md
+⚠️ The tasks.txt file is intentionally ignored by Git to prevent committing personal data.
+
+📸 Sample Usage
+text
 Αντιγραφή κώδικα
 Task Tracker
 1) View tasks
 2) Add task
-3) Toggle task completion (done / undone)
+3) Mark task as completed
 4) Delete task
-5) Clear completed tasks
-6) Exit
-Enter the number of the action you want to perform.
-
-📁 Project Structure
-arduino
-Αντιγραφή κώδικα
-task-tracker/
-│
-├── task_tracker.py
-├── tasks.txt        # ignored by git
-└── README.md
-🔒 Data Safety
-Automatic saving after every change
-
-Handles invalid or corrupted data gracefully
-
-No external services or databases required
-
-🛠️ Future Improvements
+5) Save & Exit
+🚀 Future Improvements
 Task priorities (Low / Medium / High)
 
-Due dates and reminders
+Due dates
 
 Export tasks to CSV
 
-Search and filtering
+Search and filter functionality
 
-GUI or web version
+Optional GUI or Web interface
 
-📚 Purpose
-This project demonstrates:
+🎯 Purpose
+This project is part of a personal learning roadmap focused on:
 
-Python fundamentals
+Python programming
 
-File handling and validation
+Automation
 
-Clean CLI design
+Building real, practical tools
 
-Product-oriented thinking
+Preparing for more advanced projects and products
 
