@@ -30,24 +30,21 @@ This project was built as a learning project to practice **Python fundamentals, 
 ### Windows
 ```bash
 py task_tracker.py
+
 macOS / Linux
-bash
-Αντιγραφή κώδικα
 python3 task_tracker.py
+
 🧠 How It Works
+
 Tasks are stored in a local file called tasks.txt.
 
 Each task follows this format:
-
-text
-Αντιγραφή κώδικα
 done|created_at|text
-Example:
 
-text
-Αντιγραφή κώδικα
+Example:
 0|2025-01-10 14:30|Finish Python project
 1|2025-01-10 15:00|Push code to GitHub
+
 done: 0 = not completed, 1 = completed
 
 created_at: timestamp of creation
@@ -55,8 +52,6 @@ created_at: timestamp of creation
 text: task description
 
 🗂️ Project Structure
-text
-Αντιγραφή κώδικα
 task-tracker/
 │
 ├── task_tracker.py   # Main application
@@ -66,15 +61,15 @@ task-tracker/
 ⚠️ The tasks.txt file is intentionally ignored by Git to prevent committing personal data.
 
 📸 Sample Usage
-text
-Αντιγραφή κώδικα
 Task Tracker
 1) View tasks
 2) Add task
 3) Mark task as completed
 4) Delete task
 5) Save & Exit
+
 🚀 Future Improvements
+
 Task priorities (Low / Medium / High)
 
 Due dates
@@ -86,6 +81,7 @@ Search and filter functionality
 Optional GUI or Web interface
 
 🎯 Purpose
+
 This project is part of a personal learning roadmap focused on:
 
 Python programming
@@ -95,5 +91,3 @@ Automation
 Building real, practical tools
 
 Preparing for more advanced projects and products
-
-
