@@ -1,4 +1,4 @@
-```# 📝 Task Tracker (CLI)
+# 📝 Task Tracker (CLI)
 
 A simple and clean **Command-Line Task Tracker** written in Python.  
 It allows you to manage daily tasks directly from the terminal with persistent storage.
@@ -29,21 +29,22 @@ This project was built as a learning project to practice **Python fundamentals, 
 
 ### Windows
 ```bash
-py task_tracker.py```
+py task_tracker.py
 
 macOS / Linux
-```python3 task_tracker.py```
+python3 task_tracker.py
 
 🧠 How It Works
 
 Tasks are stored in a local file called tasks.txt.
 
 Each task follows this format:
-```done|created_at|text```
+done|created_at|text
+
 
 Example:
-```0|2025-01-10 14:30|Finish Python project
-1|2025-01-10 15:00|Push code to GitHub```
+0|2025-01-10 14:30|Finish Python project
+1|2025-01-10 15:00|Push code to GitHub
 done: 0 = not completed, 1 = completed
 
 created_at: timestamp of creation
@@ -51,21 +52,21 @@ created_at: timestamp of creation
 text: task description
 
 🗂️ Project Structure
-```task-tracker/
+task-tracker/
 │
 ├── task_tracker.py   # Main application
 ├── tasks.txt         # Task storage file (generated at runtime)
 ├── .gitignore
-└── README.md```
+└── README.md
 ⚠️ The tasks.txt file is intentionally ignored by Git to prevent committing personal data.
 
 📸 Sample Usage
-```Task Tracker
+Task Tracker
 1) View tasks
 2) Add task
 3) Mark task as completed
 4) Delete task
-5) Save & Exit```
+5) Save & Exit
 
 🚀 Future Improvements
 
