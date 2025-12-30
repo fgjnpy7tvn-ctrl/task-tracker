@@ -1,4 +1,4 @@
-# 📝 Task Tracker (CLI)
+### 📝 Task Tracker (CLI)
 
 A simple and clean **Command-Line Task Tracker** written in Python.  
 It allows you to manage daily tasks directly from the terminal with persistent storage.
@@ -7,7 +7,7 @@ This project was built as a learning project to practice **Python fundamentals, 
 
 ---
 
-## ✨ Features
+### ✨ Features
 
 - View all tasks
 - Add new tasks
@@ -18,14 +18,14 @@ This project was built as a learning project to practice **Python fundamentals, 
 
 ---
 
-## 📋 Requirements
+### 📋 Requirements
 
 - Python **3.10+**
 - No external libraries required
 
 ---
 
-## ▶️ Run the Application
+### ▶️ Run the Application
 
 ### Windows
 ```bash
