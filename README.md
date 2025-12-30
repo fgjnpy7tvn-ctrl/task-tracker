@@ -32,7 +32,6 @@ This project was built as a learning project to practice **Python fundamentals, 
 py task_tracker.py
 macOS / Linux
 bash
-Αντιγραφή κώδικα
 python3 task_tracker.py
 🧠 How It Works
 Tasks are stored in a local file called tasks.txt.
@@ -40,11 +39,9 @@ Tasks are stored in a local file called tasks.txt.
 Each task follows this format:
 
 text
-Αντιγραφή κώδικα
 done|created_at|text
 Example:
 text
-Αντιγραφή κώδικα
 0|2025-01-10 14:30|Finish Python project
 1|2025-01-10 15:00|Push code to GitHub
 done: 0 = not completed, 1 = completed
@@ -55,7 +52,6 @@ text: task description
 
 🗂️ Project Structure
 text
-Αντιγραφή κώδικα
 task-tracker/
 │
 ├── task_tracker.py   # Main application
@@ -66,7 +62,6 @@ task-tracker/
 
 📸 Sample Usage
 text
-Αντιγραφή κώδικα
 Task Tracker
 1) View tasks
 2) Add task
