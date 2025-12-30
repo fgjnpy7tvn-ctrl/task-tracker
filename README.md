@@ -74,7 +74,7 @@ Example:
     Task Tracker
     1) View tasks
     2) Add task
-    3) Mark task as completed
+    3) Toggle task completion
     4) Delete task
     5) Save & Exit
 
@@ -93,6 +93,7 @@ Example:
 ## 🎯 Purpose
 
 This project is part of a personal learning roadmap focused on:
+-This project also serves as a foundation for future automation and AI-powered tools
 - Python programming
 - Automation
 - Building real, practical tools
