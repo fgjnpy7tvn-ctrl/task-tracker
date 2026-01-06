@@ -1,22 +1,12 @@
 from __future__ import annotations
 
-from pathlib import Path
 from datetime import datetime
 from typing import List, Dict, Any
 
-DELIM = "|"
-DATE_FMT = "%Y-%m-%d %H:%M:%S"
-TASKS_FILE = Path("tasks.txt")
-
-
-def ensure_tasks_file_exists() -> None:
-    if not TASKS_FILE.exists():
-        TASKS_FILE.touch()
-
+FILE_NAME = "tasks.txt"
 
 
 def load_tasks() -> List[Dict[str, Any]]:
-    ensure_tasks_file_exists()
     """
     File format (per line): done|created_at|text
     done: 1 (done) or 0 (not done)
@@ -26,46 +16,38 @@ def load_tasks() -> List[Dict[str, Any]]:
     tasks: List[Dict[str, Any]] = []
     bad_lines = 0
 
-
-    with TASKS_FILE.open("r", encoding="utf-8") as f:
+    try:
+        with open(FILE_NAME, "r", encoding="utf-8") as f:
             for raw_line in f:
                 line = raw_line.strip()
                 if not line:
                     continue
 
-                parts = line.split(DELIM, maxsplit=2)
+                parts = line.split("|", 2)
                 if len(parts) != 3:
                     bad_lines += 1
                     continue
 
                 done_str, created_at, text = parts
-                done_str = done_str.strip()
-                created_at = created_at.strip()
-                text = text.strip()
 
                 if done_str not in ("0", "1"):
                     bad_lines += 1
                     continue
 
-                try:
-                        created_at_dt = datetime.strptime(created_at, DATE_FMT)
-                except ValueError:
+                if not created_at or not text:
                     bad_lines += 1
                     continue
-
-                if not text:
-                    bad_lines += 1
-                    continue
-
 
                 tasks.append(
                     {
                         "done": done_str == "1",
-                        "created_at": created_at_dt,
+                        "created_at": created_at,
                         "text": text,
                     }
                 )
-
+    except FileNotFoundError:
+        # No file yet: start fresh
+        pass
 
     if bad_lines > 0:
         print(f"⚠️ Αγνοήθηκαν {bad_lines} προβληματικές γραμμές από το αρχείο tasks.")
@@ -74,7 +56,7 @@ def load_tasks() -> List[Dict[str, Any]]:
 
 
 def save_tasks(tasks: List[Dict[str, Any]]) -> None:
-    with TASKS_FILE.open("w", encoding="utf-8") as f:
+    with open(FILE_NAME, "w", encoding="utf-8") as f:
         for t in tasks:
             done_str = "1" if t.get("done") else "0"
             created_at = t.get("created_at", "")
@@ -88,12 +70,12 @@ def print_tasks(tasks: List[Dict[str, Any]]) -> None:
         return
 
     # Sort: open tasks first, done tasks last
-    tasks_sorted = sorted(tasks, key=lambda task: task.get("done", False))
+    tasks_sorted = sorted(tasks, key=lambda t: t.get("done", False))
 
     print("\n--- Τα Tasks σου ---")
-    for i, task_item in enumerate(tasks_sorted, start=1):
-        status = "✅" if task_item.get("done") else "🟨"
-        print(f"{i}. {status} {task_item.get('text', '')}  (created: {task_item.get('created_at', '')})")
+    for i, t in enumerate(tasks_sorted, start=1):
+        status = "✅" if t.get("done") else "🟨"
+        print(f"{i}. {status} {t.get('text', '')}  (created: {t.get('created_at', '')})")
     print("--------------------\n")
 
 
@@ -125,11 +107,11 @@ def _get_task_index_from_user(tasks: List[Dict[str, Any]], prompt: str) -> int |
         return None
 
     # Create sorted view used in print_tasks
-    tasks_sorted = sorted(tasks, key=lambda task: task.get("done", False))
+    tasks_sorted = sorted(tasks, key=lambda t: t.get("done", False))
     print("\n--- Τα Tasks σου ---")
-    for i, task_item in enumerate(tasks_sorted, start=1):
-        status = "✅" if task_item.get("done") else "🟨"
-        print(f"{i}. {status} {task_item.get('text', '')}  (created: {task_item.get('created_at', '')})")
+    for i, t in enumerate(tasks_sorted, start=1):
+        status = "✅" if t.get("done") else "🟨"
+        print(f"{i}. {status} {t.get('text', '')}  (created: {t.get('created_at', '')})")
     print("--------------------\n")
 
     try:
@@ -217,3 +199,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
