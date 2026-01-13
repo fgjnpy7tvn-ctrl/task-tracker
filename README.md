@@ -76,7 +76,9 @@ Example:
     2) Add task
     3) Toggle task completion
     4) Delete task
-    5) Save & Exit
+    5) Clear completed
+    6) Exit
+
 
 ---
 
